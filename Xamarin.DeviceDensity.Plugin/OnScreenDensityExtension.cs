@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using System.Reflection;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,64 +6,26 @@ using Xamarin.Forms.Xaml;
 namespace Xamarin.DeviceDensity.Plugin
 {
     [ContentProperty(nameof(Default))]
-    public class OnScreenDensityExtension : IMarkupExtension
+    public class OnScreenDensityExtension : IMarkupExtension<double>
     {
-        public object Default { get; set; }
-        public object OnePointZero { get; set; }
-        public object OnePointFive { get; set; }
-        public object TwoPointZero { get; set; }
-        public object TwoPointFive { get; set; }
-        public object ThreePointZero { get; set; }
-        public object ThreePointFive { get; set; }
-        public object FourPointZero { get; set; }
-        public IValueConverter Converter { get; set; }
+        public double Default { get; set; }
+        public double OnePointZero { get; set; }
+        public double OnePointFive { get; set; }
+        public double TwoPointZero { get; set; }
+        public double TwoPointFive { get; set; }
+        public double ThreePointZero { get; set; }
+        public double ThreePointFive { get; set; }
+        public double FourPointZero { get; set; }
 
-        public object ConverterParameter { get; set; }
-        public object ProvideValue(IServiceProvider serviceProvider)
+        public double ProvideValue(IServiceProvider serviceProvider)
         {
-            if (Default == null
-                && OnePointZero == null
-                && OnePointFive == null
-                && TwoPointZero == null
-                && TwoPointFive == null
-                && ThreePointZero == null
-                && ThreePointFive == null
-                && FourPointZero == null
-                )
-                throw new XamlParseException("OnScreenDensityExtension requires a non-null value to be specified for at least one device density or Default.");
+            if (Default == 0)
+                throw new XamlParseException("OnScreenDensityExtension requires a non-null value to be specified for Default property.");
 
-            var valueProvider = serviceProvider?.GetService<IProvideValueTarget>() ?? throw new ArgumentException();
-
-            BindableProperty bp;
-            PropertyInfo pi = null;
-            Type propertyType = null;
-
-            if (valueProvider.TargetObject is Setter setter)
-            {
-                bp = setter.Property;
-            }
-            else
-            {
-                bp = valueProvider.TargetProperty as BindableProperty;
-                pi = valueProvider.TargetProperty as PropertyInfo;
-            }
-            propertyType = bp?.ReturnType
-                              ?? pi?.PropertyType
-                              ?? throw new InvalidOperationException("Cannot determine property to provide the value for.");
-            var value = GetValue();
-            var info = propertyType.GetTypeInfo();
-
-            if (value == null && info.IsValueType)
-                return Activator.CreateInstance(propertyType);
-
-            if (Converter != null)
-                return Converter.Convert(value, propertyType, ConverterParameter, CultureInfo.CurrentUICulture);
-
-            return default;
-
+            return GetValue();
         }
 
-        private object GetValue()
+        private double GetValue()
         {
             switch (GetDeviceScreenDensity())
             {
@@ -95,5 +55,10 @@ namespace Xamarin.DeviceDensity.Plugin
         }
 
         private double GetDeviceScreenDensity() => DeviceDisplay.MainDisplayInfo.Density;
+
+        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+        {
+            return (this as IMarkupExtension<double>).ProvideValue(serviceProvider);
+        }
     }
 }
