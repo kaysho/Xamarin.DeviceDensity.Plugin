@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.DeviceDensity.Plugin", "Xamarin.DeviceDensity.Plugin\Xamarin.DeviceDensity.Plugin.csproj", "{B7C1A81B-B71C-4800-9138-B35F77891000}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7C1A81B-B71C-4800-9138-B35F77891000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C1A81B-B71C-4800-9138-B35F77891000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C1A81B-B71C-4800-9138-B35F77891000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C1A81B-B71C-4800-9138-B35F77891000}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93D51B64-4029-4D30-BDB2-A1321E5A04B5}
+	EndGlobalSection
+EndGlobal
