@@ -4,13 +4,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Damilola Shopeyin</Authors>
     <Description>This package helps with targeting devices of different screen density to produce a true UX across multiple screen densities.</Description>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IsPackable>true</IsPackable>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/kaysho/Xamarin.DeviceDensity.Plugin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kaysho/Xamarin.DeviceDensity.Plugin.git</RepositoryUrl>
+    <PackageTags>Xamarin, forms,xamarin forms, density, font, size, ux</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
   </ItemGroup>
 
 </Project>

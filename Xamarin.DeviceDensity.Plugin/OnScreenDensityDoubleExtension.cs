@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace Xamarin.DeviceDensity.Plugin
 {
     [ContentProperty(nameof(Default))]
-    public class OnScreenDensityExtension : IMarkupExtension<double>
+    public class OnScreenDensityDoubleExtension : IMarkupExtension<double>
     {
         public double Default { get; set; }
         public double OnePointZero { get; set; }
@@ -20,7 +20,7 @@ namespace Xamarin.DeviceDensity.Plugin
         public double ProvideValue(IServiceProvider serviceProvider)
         {
             if (Default == 0)
-                throw new XamlParseException("OnScreenDensityExtension requires a non-null value to be specified for Default property.");
+                throw new Exception("OnScreenDensityExtension requires a non-null value to be specified for Default property.");
 
             return GetValue();
         }
@@ -30,24 +30,31 @@ namespace Xamarin.DeviceDensity.Plugin
             switch (GetDeviceScreenDensity())
             {
                 case 1.0:
+                case 1.49:
                     ///
                     return OnePointZero;
                 case 1.5:
+                case 1.99:
                     ///
                     return OnePointFive;
                 case 2.0:
+                case 2.49:
                     ///
                     return TwoPointZero;
                 case 2.5:
+                case 2.99:
                     ///
                     return TwoPointFive;
                 case 3.0:
+                case 3.49:
                     ///
                     return ThreePointZero;
                 case 3.5:
+                case 3.99:
                     ///
                     return ThreePointFive;
                 case 4.0:
+                case 4.9:
                     return FourPointZero;
                 default:
                     return Default;
