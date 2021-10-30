@@ -20,7 +20,7 @@ Each mobile device has a device density which ranges from 1.0 through to ~4.0.
 1. Download the latest version through [NuGet](https://www.nuget.org/packages/Xamarin.DeviceDensity.Plugin/) and install it in your Xamarin.Forms standard project.
 
 # How to use
-1. Add this line to your `xaml.cs`
+1. Add this line to your `xaml`
 
 ```xml
 xmlns:density="clr-namespace:Xamarin.DeviceDensity.Plugin;assembly=Xamarin.DeviceDensity.Plugin"
@@ -36,3 +36,21 @@ Or a `Button` that has different corner radius across multiple device screen.
 ```xml
 <Button CornerRadius="{density:OnScreenDensityDouble Default=10, OnePointZero=8, OnePointFive=8, TwoPointZero=10, TwoPointFive=10, ThreePointZero=12, ThreePointFive=12, FourPointZero=14}" Text="Start developing now" />
 ```
+
+# Images
+
+Below are screenshots of a file new Xamarin forms shell project before making use of the plugin. The iPhone 12 Pro Max uses a 3.0 density while the iPhone SE makes use of 2.0 device density,
+
+## Before
+<br/>
+
+<img src="images/before.png" />
+<br/>
+<br/>
+
+## After
+You can see how crisp the layout looks on both screen type.
+<br/>
+<br/>
+
+<img src="images/after.png" />
