@@ -43,32 +43,39 @@
                 Padding="30,24,30,24"
                 Orientation="Vertical"
                 Spacing="10">
-                <Label FontSize="Title" Text="Start developing now" />
-                <!--<Label Text="Start developing now" FontSize="Title"/>-->
-                <Label FontSize="{density:OnScreenDensityDouble Default=10, OnePointZero=10, OnePointFive=10, TwoPointZero=10, TwoPointFive=10, ThreePointZero=10, ThreePointFive=10, FourPointZero=10}" Text="Start developing now" />
+                <Label FontSize="{density:OnScreenDensityDouble Default=24, OnePointZero=24, OnePointFive=24, TwoPointZero=20, TwoPointFive=20, ThreePointZero=28, ThreePointFive=28, FourPointZero=28}" Text="Start developing now" />
                 <Label
                     Padding="0,0,0,0"
                     FontSize="{density:OnScreenDensityDouble Default=16,
                                                              OnePointZero=16,
                                                              OnePointFive=16,
-                                                             TwoPointZero=16,
+                                                             TwoPointZero=14,
                                                              TwoPointFive=16,
                                                              ThreePointZero=16,
                                                              ThreePointFive=16,
                                                              FourPointZero=16}"
                     Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" />
-                <Label Padding="0,24,0,0" FontSize="{density:OnScreenDensityDouble Default=16, OnePointZero=16, OnePointFive=16, TwoPointZero=16, TwoPointFive=16, ThreePointZero=16, ThreePointFive=16, FourPointZero=16}">
+                <Label Padding="0,24,0,0" FontSize="{density:OnScreenDensityDouble Default=16, OnePointZero=16, OnePointFive=16, TwoPointZero=14, TwoPointFive=16, ThreePointZero=16, ThreePointFive=16, FourPointZero=16}">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Learn more at " />
-                                <Span FontAttributes="Bold" Text="https://aka.ms/xamarin-quickstart" />
+                                <Span FontSize="{density:OnScreenDensityDouble Default=16, OnePointZero=16, OnePointFive=16, TwoPointZero=14, TwoPointFive=16, ThreePointZero=16, ThreePointFive=16, FourPointZero=16}" Text="Learn more at " />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="{density:OnScreenDensityDouble Default=16,
+                                                                             OnePointZero=16,
+                                                                             OnePointFive=16,
+                                                                             TwoPointZero=14,
+                                                                             TwoPointFive=16,
+                                                                             ThreePointZero=16,
+                                                                             ThreePointFive=16,
+                                                                             FourPointZero=16}"
+                                    Text="https://aka.ms/xamarin-quickstart" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
                 <Button
-                    CornerRadius=""
                     Margin="0,10,0,0"
                     BackgroundColor="{StaticResource Primary}"
                     Command="{Binding OpenWebCommand}"
@@ -77,5 +84,6 @@
             </StackLayout>
         </ScrollView>
     </Grid>
+
 
 </ContentPage>

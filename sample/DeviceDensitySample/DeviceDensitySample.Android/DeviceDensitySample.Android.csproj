@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -88,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeviceDensitySample\DeviceDensitySample.csproj">
-      <Project>{EA49B931-CAB7-4E30-9350-0C82DF0A07EE}</Project>
+      <Project>{03AB7BC9-67A1-4536-A688-B1CA61909425}</Project>
       <Name>DeviceDensitySample</Name>
     </ProjectReference>
   </ItemGroup>
