@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeviceDensitySample.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:density="clr-namespace:Xamarin.DeviceDensity.Plugin;assembly=Xamarin.DeviceDensity.Plugin"
+    xmlns:vm="clr-namespace:DeviceDensitySample.ViewModels"
+    Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout
+            BackgroundColor="{StaticResource Accent}"
+            HorizontalOptions="Fill"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image
+                        HeightRequest="64"
+                        Source="xamarin_logo.png"
+                        VerticalOptions="Center" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout
+                Padding="30,24,30,24"
+                Orientation="Vertical"
+                Spacing="10">
+                <Label FontSize="Title" Text="Start developing now" />
+                <!--<Label Text="Start developing now" FontSize="Title"/>-->
+                <Label FontSize="{density:OnScreenDensityDouble Default=10, OnePointZero=10, OnePointFive=10, TwoPointZero=10, TwoPointFive=10, ThreePointZero=10, ThreePointFive=10, FourPointZero=10}" Text="Start developing now" />
+                <Label
+                    Padding="0,0,0,0"
+                    FontSize="{density:OnScreenDensityDouble Default=16,
+                                                             OnePointZero=16,
+                                                             OnePointFive=16,
+                                                             TwoPointZero=16,
+                                                             TwoPointFive=16,
+                                                             ThreePointZero=16,
+                                                             ThreePointFive=16,
+                                                             FourPointZero=16}"
+                    Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" />
+                <Label Padding="0,24,0,0" FontSize="{density:OnScreenDensityDouble Default=16, OnePointZero=16, OnePointFive=16, TwoPointZero=16, TwoPointFive=16, ThreePointZero=16, ThreePointFive=16, FourPointZero=16}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Learn more at " />
+                                <Span FontAttributes="Bold" Text="https://aka.ms/xamarin-quickstart" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button
+                    CornerRadius=""
+                    Margin="0,10,0,0"
+                    BackgroundColor="{StaticResource Primary}"
+                    Command="{Binding OpenWebCommand}"
+                    Text="Learn more"
+                    TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
